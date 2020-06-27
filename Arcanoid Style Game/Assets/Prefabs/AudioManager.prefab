@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1086753748652932}
+  m_IsPrefabParent: 1
+--- !u!1 &1086753748652932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4183182354436786}
+  - component: {fileID: 114974179455695448}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4183182354436786
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1086753748652932}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114974179455695448
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1086753748652932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6531f53ff949cf542b5987d67c0c4e87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 9c5aad484589ce14383d0e5e7bb74688, type: 2}
+  sounds:
+  - name: MainTheme
+    clip: {fileID: 8300000, guid: 377b31519d9cb174da959d8b76e5fad9, type: 3}
+    outputAudioMixerGroup: {fileID: 243291914061208612, guid: 9c5aad484589ce14383d0e5e7bb74688,
+      type: 2}
+    priority: 0
+    volume: 0.5
+    pitch: 1
+    pitchRange: 0
+    spatialBlend: 0
+    loop: 1
+  - name: HitPaddle
+    clip: {fileID: 8300000, guid: 651476e0c94b7f249b0401e63eb19086, type: 3}
+    outputAudioMixerGroup: {fileID: 243148854365099638, guid: 9c5aad484589ce14383d0e5e7bb74688,
+      type: 2}
+    priority: 0
+    volume: 1
+    pitch: 1
+    pitchRange: 0.01
+    spatialBlend: 1
+    loop: 0

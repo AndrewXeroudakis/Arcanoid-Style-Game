@@ -1,0 +1,34 @@
+fileFormatVersion: 2
+guid: a80bfd2a3f24fd1478bb186be75dad44
+timeCreated: 1527955777
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - power: {instanceID: 0}
+  - scoreText: {fileID: 1762770123270590, guid: 47725c95a6f82d34f98a548871dc2c31,
+      type: 2}
+  - HitBrick: {fileID: 8300000, guid: 33b9e9926fefd384fbba2d48133cdeb6, type: 3}
+  - explosion: {fileID: 1824701787889962, guid: 216e61076ec08174792b34d5a13389f0,
+      type: 2}
+  - summerHit1: {instanceID: 0}
+  - summerHit2: {instanceID: 0}
+  - summerHit3: {instanceID: 0}
+  - summerUnbreakable: {instanceID: 0}
+  - summerExplosive: {instanceID: 0}
+  - autumnHit1: {instanceID: 0}
+  - autumnHit2: {instanceID: 0}
+  - autumnHit3: {instanceID: 0}
+  - autumnUnbreakable: {instanceID: 0}
+  - autumnExplosive: {instanceID: 0}
+  - winterHit1: {instanceID: 0}
+  - winterHit2: {instanceID: 0}
+  - winterHit3: {instanceID: 0}
+  - winterUnbreakable: {instanceID: 0}
+  - winterExplosive: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
