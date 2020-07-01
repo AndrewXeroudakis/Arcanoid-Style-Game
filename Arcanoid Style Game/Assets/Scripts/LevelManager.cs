@@ -124,14 +124,18 @@ public class LevelManager : MonoBehaviour {
 
     void WinLevel()
     {
-        scoreManager.UpdateAchievements();
-        scoreManager.UpdateSaveManager();
+        if (scoreManager != null)
+        {
+            scoreManager.UpdateAchievements();
+            scoreManager.UpdateSaveManager();
+        }
         UpdateLevel();
     }
 
     public void LoseLevel()
     {
         scoreManager.UpdateSaveManager();
+        SaveManager.saveManager.loseSceneStart = true;
         LoadLevel("Lose");
     }
 
@@ -213,9 +217,12 @@ public class LevelManager : MonoBehaviour {
 
         // set map generator parameters and generate bricks
         mapGenerator = GameObject.FindObjectOfType<MapGenerator>();
-        mapGenerator.SetMapGeneratorParameters(level, month, difficulty, intensity);
-        mapGenerator.generateBricks = true;
-        mapGenerator.Generate();
+        if (mapGenerator != null)
+        {
+            mapGenerator.SetMapGeneratorParameters(level, month, difficulty, intensity);
+            mapGenerator.generateBricks = true;
+            mapGenerator.Generate();
+        }
 
         // initialize brickHitsTotal
         int hitsTotal = 0;
@@ -242,11 +249,14 @@ public class LevelManager : MonoBehaviour {
         unbreakableBrickHitsTotal = unbreakableHitsTotal;
 
         // score manager
-        scoreManager.InitializeTimer();
-        scoreManager.SetLevelText();
-        scoreManager.ResetBestScoreHits();
-        scoreManager.SetScoreMultiplier();
-        //scoreManager.SetMultiplierText();
+        if (scoreManager != null)
+        {
+            scoreManager.InitializeTimer();
+            scoreManager.SetLevelText();
+            scoreManager.ResetBestScoreHits();
+            scoreManager.SetScoreMultiplier();
+            //scoreManager.SetMultiplierText();
+        }
 
         // background
         //background.LoadSprites();
@@ -280,5 +290,4 @@ public class LevelManager : MonoBehaviour {
         month = 0;
         season = 0;
     }
-    
 }

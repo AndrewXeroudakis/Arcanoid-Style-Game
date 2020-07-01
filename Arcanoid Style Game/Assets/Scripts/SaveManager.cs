@@ -27,6 +27,9 @@ public class SaveManager : MonoBehaviour
     private float b;
     private bool experienceBarAnimation = false;
 
+    [HideInInspector]
+    public bool loseSceneStart = false;
+
     void Awake()
     {
         if (saveManager == null)
@@ -47,6 +50,11 @@ public class SaveManager : MonoBehaviour
 
     void Update()
     {
+        if (loseSceneStart)
+        {
+            Lose();
+        }
+
         /*if (experienceBarAnimation == true)
         {
             //expBar.GetComponent<Slider>().value = Mathf.Lerp(a, b, 0.0001f);
@@ -73,6 +81,7 @@ public class SaveManager : MonoBehaviour
             stageText.GetComponent<Text>().text = endStage.ToString();
             bScoreText.GetComponent<Text>().text = bestScore.ToString();
             bStageText.GetComponent<Text>().text = bestStage.ToString();
+            Debug.Log("Lose Scene");
         }
 
         if (scene.name != "Game")
@@ -158,6 +167,31 @@ public class SaveManager : MonoBehaviour
         //Debug.Log("Stage = " + endStage);
         //Debug.Log("BestScore = " + bestScore);
         //Debug.Log("BestStage = " + bestStage);
+    }
+
+    public void Lose()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+
+        if (scene.name == "Lose")
+        {
+            Load();
+
+            GameObject xpText = GameObject.FindGameObjectWithTag("XpPointsText");
+            xpText.GetComponent<Text>().text = xpPoints.ToString() + "/" + xpPointsRequired.ToString();
+
+            GameObject scoreText = GameObject.FindGameObjectWithTag("ScoreText");
+            GameObject stageText = GameObject.FindGameObjectWithTag("StageText");
+            GameObject bScoreText = GameObject.FindGameObjectWithTag("BestScoreText");
+            GameObject bStageText = GameObject.FindGameObjectWithTag("BestStageText");
+
+            scoreText.GetComponent<Text>().text = endScore.ToString();
+            stageText.GetComponent<Text>().text = endStage.ToString();
+            bScoreText.GetComponent<Text>().text = bestScore.ToString();
+            bStageText.GetComponent<Text>().text = bestStage.ToString();
+            
+            loseSceneStart = false;
+        }
     }
 }
 

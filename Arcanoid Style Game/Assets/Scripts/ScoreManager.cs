@@ -91,7 +91,7 @@ public class ScoreManager : MonoBehaviour {
     public Text nextTimerText;
 
     void Awake () {
-
+        
         // Find objects
         levelManager = GameObject.FindObjectOfType<LevelManager>();
         powerManager = GameObject.FindObjectOfType<PowerManager>();
@@ -135,7 +135,8 @@ public class ScoreManager : MonoBehaviour {
         addedScore += newScore;
 
         // set score text
-        scoreText.text = score.ToString(); //"SCORE " +
+        if (scoreText != null)
+            scoreText.text = score.ToString(); //"SCORE " +
 
         return newScore;
     }
